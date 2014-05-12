@@ -1,6 +1,9 @@
 <# 
- .Synopsis
+  .Synopsis
   A bunch of useful stuff
+  
+  .Version
+  $version
 #>
 
 function Get-Batchfile ($file) {
