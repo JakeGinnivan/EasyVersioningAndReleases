@@ -17,6 +17,8 @@ function Prune-Local-Branches() {
 
 function Load-VsVars32-2013()
 {
+    write-host "Initializing VS2013 Environment"
+    
     $vs120comntools = (Get-ChildItem env:VS120COMNTOOLS).Value
     $batchFile = [System.IO.Path]::Combine($vs120comntools, "vsvars32.bat")
     Get-Batchfile $BatchFile
