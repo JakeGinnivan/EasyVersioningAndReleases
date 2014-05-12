@@ -10,4 +10,4 @@ $version = $versionInfo.SemVer
     Foreach-Object {$_ -replace '__version__',"v$version"} |
     Out-File "$currentDir\src\UsefulStuff.psm1"
     
-Write-Output "##teamcity[buildNumber '#$version']"
+Write-Output "##teamcity[buildNumber '$version']"
