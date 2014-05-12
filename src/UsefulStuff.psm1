@@ -3,7 +3,7 @@
   A bunch of useful stuff
   
   .Version
-  $version
+  __version__
 #>
 
 function Get-Batchfile ($file) {
