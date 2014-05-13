@@ -6,8 +6,12 @@ $joined = $output -join "`n"
 $versionInfo = $joined | ConvertFrom-Json
 $version = $versionInfo.SemVer
 
-(Get-Content "$currentDir\src\UsefulStuff.psm1") | 
+mkdir "$currentDir\Artifacts"
+
+Copy-Item "$currentDir\src\UsefulStuff.psm1" "$currentDir\Artifacts\UsefulStuff.psm1"
+
+(Get-Content "$currentDir\Artifacts\UsefulStuff.psm1") | 
     Foreach-Object {$_ -replace '__version__',"v$version"} |
-    Out-File "$currentDir\src\UsefulStuff.psm1"
+    Out-File "$currentDir\Artifacts\UsefulStuff.psm1"
     
 Write-Output "##teamcity[buildNumber '$version']"
